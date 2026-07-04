@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "model-deploy"
+version = "0.1.0"
+description = "One-click model deployment with vLLM, Ollama, and OpenAI compatible APIs"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = ["rich>=13.0.0", "click>=8.0.0", "requests>=2.31.0"]
+
+[project.scripts]
+model-deploy = "model_deploy.cli:cli"
+
+[project.optional-dependencies]
+vllm = ["vllm>=0.5.0"]
+ollama = ["ollama>=0.1.0"]
+dev = ["pytest>=7.0", "ruff>=0.1.0"]
